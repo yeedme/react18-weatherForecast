@@ -2,11 +2,10 @@ import React, { useEffect } from 'react'
 import './Cogs.css'
 export default function Cogs(prpos) {
   const {Temperature,ChangeColor,Color}=prpos
-  const test=[{date:'7月16'}]
   let testData=new Array(30);
   testData.fill('kkk')
   useEffect(()=>{
-    //console.log('Temperature');
+    console.log(Temperature.high);
   },[])
 
   return (
@@ -20,7 +19,7 @@ export default function Cogs(prpos) {
                 className='CogsItem'
                 > 
                   <h1 >{t.low}°~{t.high}°</h1>
-                  <h2>7月16</h2>
+                  <h2>{t.ymd}</h2>
                   <p>{t.type}</p>
                   </div>
             })

@@ -1,0 +1,47 @@
+.Cascader{
+    margin: 0%;
+    font-size: 20px;
+    width: 170px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    .input{
+        width: 160px;
+        border:none
+    }
+}
+
+@media screen {
+    @media (max-width: 979px) {
+        .Cascader{
+            font-size: 13px;
+            width: 120px;
+            .input{
+                width: 110px;
+            }
+        }
+    };
+
+    @media (max-width: 756px) {
+        .Cascader{
+            font-size: 9px;
+            width: 90px;
+            .input{
+                width: 70px;
+            }
+        }
+    };
+    
+    @media (max-width: 480px) {
+        .Cascader{
+            font-size: 3px;
+            width: 50px;
+            .input{
+                width: 50px;
+            }
+        }
+    }
+
+  }

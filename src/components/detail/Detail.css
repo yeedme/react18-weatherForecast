@@ -23,16 +23,16 @@
 }
 @media screen and (max-width: 979px) {
   .WeatherNum {
-    font-size: 10rem;
+    font-size: 11rem;
   }
 }
 @media screen and (max-width: 756px) {
   .WeatherNum {
-    font-size: 8rem;
+    font-size: 9rem;
   }
 }
 @media screen and (max-width: 480px) {
   .WeatherNum {
-    font-size: 6rem;
+    font-size: 8rem;
   }
 }

@@ -7,13 +7,10 @@ import Charts from '../charts/Charts'//组件
 import axios from 'axios'
 import './index.css'
 let k={
-  currentWeather: { shidu: '23%', pm25: 5, pm10: 30, wendu: '18' },
+  currentWeather: { shidu: '23%', pm25: 5, pm10: 30, wendu: '18',city:'北京' },
   Temperature: [
     { high: '36', low: '12', ymd: '09月23日', type: '晴' },
-    { high: '34', low: '12', ymd: '09月23日', type: '晴' },
-    { high: '32', low: '12', ymd: '09月23日', type: '晴' },
-    { high: '28', low: '12', ymd: '09月23日', type: '晴' },
-    { high: '24', low: '17', ymd: '09月26日', type: '晴' },]
+]
 }
 export default function Weather() {
   const [Color,setColor]=useState('white');//改变右侧栏和大数字的颜色
@@ -21,25 +18,29 @@ export default function Weather() {
   const [weatherDate,setweatherDate]=useState(k)
   //用于改变 右侧天气和大数字的颜色 
   const ChangeColor=(id)=>{
-    console.log(typeof id+' id:'+id);
-     setColorid(id);
-    const temp=HotToWild.find((t)=>t.id===id) 
-    console.log('color:'+temp.color);
+    setColorid(id);
+    const temp=HotToWild.find((t)=>t.id===id);
+    if(temp==undefined){
+      setColor('#445c8d')
+    }
+    
     setColor(temp.color);
   }
   //发生请求获取数据
 
-  const getWeatherData = async()=>{
-    const result = await axios.get( `http://localhost:8082/`)
+  const getWeatherData = async(api)=>{
+    console.log(api);
+    const result = await axios.get( `http://localhost:8082/?id=${api}`)
     .then(resp=>{
       setweatherDate(resp.data);
+      ChangeColor(resp.data.currentWeather.wendu)
     },error=>{
      console.log(error);
     });
   }
-
+  
   useEffect(()=>{
-   // getWeatherData();
+    //getWeatherData('101010100');
   },[])
 
   return (
@@ -48,12 +49,12 @@ export default function Weather() {
     {weatherDate===false?
     (<div>two</div>):
     (<div className='weather'> 
-        <WeatherCity setweatherDate={setweatherDate}/> 
+        <WeatherCity setweatherDate={setweatherDate} getWeatherData={getWeatherData} city={weatherDate.currentWeather.city}/> 
           <div className='MiddleContent' >
             <Charts/>             
             <Detail currentWeather={weatherDate.currentWeather} Colorid={Colorid} Color={Color} />  
           </div>
-        <Cogs  ChangeColor={ChangeColor} Temperature={weatherDate.Temperature} Color={Color}/>
+        <Cogs setColor={setColor} ChangeColor={ChangeColor} Temperature={weatherDate.Temperature} Color={Color}/>
       </div>)
     }
     </div>
