@@ -1,3 +1,4 @@
+//每一个颜色对应每一个背景色
 const HotToWild=[
     {id:'40',color: '#fd3e1c',},
     {id:'39',color:' #fd4d23',},

@@ -2,12 +2,7 @@ import React, { useEffect } from 'react'
 import './Cogs.css'
 export default function Cogs(prpos) {
   const {Temperature,ChangeColor,Color}=prpos
-  let testData=new Array(30);
-  testData.fill('kkk')
-  useEffect(()=>{
-    console.log(Temperature.high);
-  },[])
-
+  
   return (
     <div className='CogsContent-Right' style={{backgroundColor:Color}}>
       <div  className='CogsList-Right' >

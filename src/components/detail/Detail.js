@@ -3,12 +3,11 @@ import './Detail.css'
 export default function Detail(props) {
   const {shidu,pm10,pm25,wendu}=props.currentWeather
   const {Colorid,Color}=props
-  useEffect(()=>{
-   
-  })
+  
   return (
     <div className='Detail' >
       <div>
+        {/* 修改背景颜色 修改当前的大数字 */}
         <p className='WeatherNum' style={{color:Color}}>{Colorid}</p>
       </div>
       <div className='WeatherDetail'>
