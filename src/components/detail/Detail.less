@@ -1,0 +1,49 @@
+.Detail{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+.WeatherNum{
+    font-size: 12rem;
+    text-align: right;
+    margin: 0%;
+  }
+  .TempaNumber{
+      font-size: 25px;
+  }
+
+@DetailColor:rgb(213, 213, 213);
+.WeatherDetail{
+    width: 80%;
+    height: 250px;
+    border-top:6px solid @DetailColor;
+    color:@DetailColor;
+    font-size: 18px;
+    text-align: center;
+}
+@media screen {
+    @media (max-width: 979px) {
+      .WeatherNum{
+        font-size: 11rem;
+      }
+    
+    };
+
+    @media (max-width: 756px) {
+      .WeatherNum{
+        font-size: 9rem;
+      }
+
+    };
+    
+    @media (max-width: 480px) {
+      .WeatherNum{
+        font-size: 8rem;
+      }
+
+    }
+
+  }

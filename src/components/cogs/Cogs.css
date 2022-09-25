@@ -1,0 +1,52 @@
+.CogsContent-Right {
+  width: 180px;
+  height: 100vh;
+  transition: 1s;
+  line-height: 0.5;
+  text-align: right;
+  color: white;
+}
+.CogsList-Right::-webkit-scrollbar {
+  width: 1px;
+  /*height: 4px;*/
+}
+.CogsItem {
+  margin: 4px;
+  cursor: pointer;
+}
+@media screen and (min-width: 980px) {
+  .CogsItem {
+    width: 170px;
+  }
+}
+@media screen and (max-width: 979px) {
+  .CogsContent-Right {
+    width: 140px;
+    height: 100vh;
+  }
+}
+@media screen and (max-width: 756px) {
+  .CogsContent-Right {
+    width: 120px;
+    height: 100vh;
+    font-size: 14px;
+  }
+  .CogsItem {
+    width: 110px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .CogsContent-Right {
+    width: 100px;
+    height: 100vh;
+    font-size: 12px;
+  }
+  .CogsItem {
+    width: 90px;
+  }
+}
+.CogsList-Right {
+  margin-top: 10vh;
+  height: 80vh;
+  overflow: auto;
+}
